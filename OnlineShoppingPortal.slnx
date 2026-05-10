@@ -1,5 +1,20 @@
 <Solution>
+  <Folder Name="/ApiGateway/">
+    <Project Path="ApiGateway/ApiGateway/ApiGateway.csproj" />
+  </Folder>
+  <Folder Name="/BuildingBlocks/">
+    <Project Path="BuildingBlocks/Common.Logging/Common.Logging.csproj" />
+    <Project Path="BuildingBlocks/Common.Security/Common.Security.csproj" />
+    <Project Path="BuildingBlocks/EventBus/EventBus.csproj" />
+    <Project Path="BuildingBlocks/SharedKernel/SharedKernel.csproj" />
+  </Folder>
   <Folder Name="/Services/">
+    <Project Path="Services/AuthenticationService/AuthenticationService.csproj" />
+    <Project Path="Services/NotificationService/NotificationService.csproj" />
+    <Project Path="Services/OrderProcessingService/OrderProcessingService.csproj" />
+    <Project Path="Services/PaymentProcessingService/PaymentProcessingService.csproj" />
     <Project Path="Services/ProductCatalogService/ProductCatalogService.csproj" />
+    <Project Path="Services/ShipmentService/ShipmentService.csproj" />
+    <Project Path="Services/ShoppingCartService/ShoppingCartService.csproj" />
   </Folder>
 </Solution>
