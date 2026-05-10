@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  order-processing-service:
+    image: order-processing-service:latest
+    container_name: order-processing-service
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5002:5002"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:5002
+    networks:
+      - online-shopping-network
+
+networks:
+  online-shopping-network:
+    driver: bridge

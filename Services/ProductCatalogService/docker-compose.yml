@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  product-catalog-service:
+    image: product-catalog-service:latest
+    container_name: product-catalog-service
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5004:5004"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:5004
+    networks:
+      - online-shopping-network
+
+networks:
+  online-shopping-network:
+    driver: bridge

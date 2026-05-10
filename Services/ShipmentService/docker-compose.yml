@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  shipment-service:
+    image: shipment-service:latest
+    container_name: shipment-service
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5005:5005"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:5005
+    networks:
+      - online-shopping-network
+
+networks:
+  online-shopping-network:
+    driver: bridge

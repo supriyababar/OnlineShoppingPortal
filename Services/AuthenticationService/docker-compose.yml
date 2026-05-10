@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  authentication-service:
+    image: authentication-service:latest
+    container_name: authentication-service
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:5000
+    networks:
+      - online-shopping-network
+
+networks:
+  online-shopping-network:
+    driver: bridge

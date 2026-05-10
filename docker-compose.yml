@@ -1,0 +1,7 @@
+
+services:
+
+  productcatalogservice:
+    build: ./Services/ProductCatalogService
+    ports:
+      - "5001:8080"

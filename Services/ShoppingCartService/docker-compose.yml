@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  shopping-cart-service:
+    image: shopping-cart-service:latest
+    container_name: shopping-cart-service
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5006:5006"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:5006
+    networks:
+      - online-shopping-network
+
+networks:
+  online-shopping-network:
+    driver: bridge
